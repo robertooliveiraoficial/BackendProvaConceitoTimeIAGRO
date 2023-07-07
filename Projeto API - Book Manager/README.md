@@ -95,7 +95,6 @@ GET ​/api/books/author;
     - "Name":
       -------
        - apresenta o nome e o tipo do parâmetro;
-       - apresenta
     - "Description":
       --------------
        - onde será passado o valor do parâmetro;          
