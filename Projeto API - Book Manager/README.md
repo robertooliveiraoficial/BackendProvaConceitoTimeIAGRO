@@ -16,28 +16,28 @@
 -------------------------
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
-- Insira essa url: <applicationUrl>/Book/GetBooks;
+- Insira essa url: <applicationUrl>/api/books;
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS EM ORDEM CRESCENTE(ASC)
 -------------------------------------------------
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
-- Insira essa url: <applicationUrl>/Book/OrderByPriceAsc;
+- Insira essa url: <applicationUrl>/api/books/price/asc;
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS EM ORDEM DECRESCENTE(DESC)
 ----------------------------------------------------
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
-- Insira essa url: <applicationUrl>/Book/OrderByPriceDesc;
+- Insira essa url: <applicationUrl>/api/books/price/desc;
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS PELO NOME DO AUTOR
 --------------------------------------------
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
-- Insira essa url: <applicationUrl>/Book/GetBooksByAuthorName;
+- Insira essa url: <applicationUrl>/api/books/author;
 - Na aba "Params", na coluna "Key", insira o nome do parâmetro, nesse caso "author"(sem aspas), na coluna "Value", insira o nome do autor(Ex.: Rowling).
 - Clique em SEND;
 
@@ -45,15 +45,15 @@
 --------------------------------------------
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
-- Insira essa url: <applicationUrl>/Book/GetBooksByBookName;
-- Na aba "Params", na coluna "Key", insira o nome do parâmetro, nesse caso "bookName"(sem aspas), na coluna "Value", insira o nome do livro(Ex.: Harry).
+- Insira essa url: <applicationUrl>/api/books/name;
+- Na aba "Params", na coluna "Key", insira o nome do parâmetro, nesse caso "name"(sem aspas), na coluna "Value", insira o nome do livro(Ex.: Harry).
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS PELO GÊNERO
 -------------------------------------
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
-- Insira essa url: <applicationUrl>/Book/GetBooksByGenre;
+- Insira essa url: <applicationUrl>/api/books/genre;
 - Na aba "Params", na coluna "Key", insira o nome do parâmetro, nesse caso "genre"(sem aspas), na coluna "Value", insira a descrição do gênero(Ex.: Adventure).
 - Clique em SEND;
 
@@ -67,35 +67,34 @@
 -- TRAZER TODOS OS LIVROS
 -------------------------
 Clique em: 
-- GET ​/Book​/GetBooks;
+- GET ​/api/books;
 - Try it out(Para habilitar as opções);
 - EXECUTE;
 
 -- TRAZER TODOS OS LIVROS EM ORDEM CRESCENTE(ASC)
 -------------------------------------------------
 Clique em: 
-GET ​/Book​/OrderByPriceAsc;
+GET /api/books/price/asc;
 - Try it out(Para habilitar as opções);
 - EXECUTE;
 
 -- TRAZER TODOS OS LIVROS EM ORDEM DECRESCENTE(DESC)
 ----------------------------------------------------
 Clique em: 
-GET ​/Book​/OrderByPriceDesc;
+GET /api/books/price/desc;
 - Try it out(Para habilitar as opções);
 - EXECUTE;
 
 -- TRAZER TODOS OS LIVROS PELO NOME DO AUTOR
 --------------------------------------------
 Clique em: 
-GET ​/Book​/GetBooksByAuthorName;
+GET ​/api/books/author;
 - Try it out(Para habilitar as opções);
 - Habilitando irá liberar uma aba(Params):
   - Será apresentado duas colunas:
     - "Name":
       -------
        - apresenta o nome e o tipo do parâmetro;
-       - apresenta
     - "Description":
       --------------
        - onde será passado o valor do parâmetro;          
@@ -105,14 +104,13 @@ GET ​/Book​/GetBooksByAuthorName;
 -- TRAZER TODOS OS LIVROS PELO NOME DO LIVRO
 --------------------------------------------
 Clique em: 
-GET ​/Book​/GetBooksByBookName;
+GET ​/api/books/name;
 - Try it out(Para habilitar as opções);
 - Habilitando irá liberar uma aba(Params):
   - Será apresentado duas colunas:
     - "Name":
       -------
        - apresenta o nome e o tipo do parâmetro;
-       - apresenta
     - "Description":
       --------------
        - onde será passado o valor do parâmetro;          
@@ -122,14 +120,13 @@ GET ​/Book​/GetBooksByBookName;
 -- TRAZER TODOS OS LIVROS PELO GÊNERO
 -------------------------------------
 Clique em: 
-GET ​/Book​/GetBooksByGenre;
+GET /api/books/genre;
 - Try it out(Para habilitar as opções);
 - Habilitando irá liberar uma aba(Params):
   - Será apresentado duas colunas:
     - "Name":
       -------
        - apresenta o nome e o tipo do parâmetro;
-       - apresenta
     - "Description":
       --------------
        - onde será passado o valor do parâmetro;          
