@@ -46,7 +46,7 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/name;
-- Na aba "Params", na coluna "Key", insira o nome do parâmetro, nesse caso "bookName"(sem aspas), na coluna "Value", insira o nome do livro(Ex.: Harry).
+- Na aba "Params", na coluna "Key", insira o nome do parâmetro, nesse caso "name"(sem aspas), na coluna "Value", insira o nome do livro(Ex.: Harry).
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS PELO GÊNERO
