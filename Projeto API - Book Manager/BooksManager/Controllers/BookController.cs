@@ -2,14 +2,14 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 
-namespace BooksManager.Controllers;
+namespace Books.Controllers;
 
 /// <summary>
 /// BookController
 /// </summary>
-[ApiController]
 [Route("[controller]")]
-public class BookController : ControllerBase
+[ApiController]
+public class BookController
 {
     #region Statements
     private static IEnumerable<Book> books = new List<Book>();
@@ -18,27 +18,44 @@ public class BookController : ControllerBase
     #endregion
 
     /// <summary>
-    /// - Retorna uma lista de todos os livros
+    /// Converte(Deserializa) o arquivo .json para a classe Book
     /// </summary>
-    /// <returns>Json</returns>
+    /// <returns></returns>
     /// <response code="200">Caso a consulta seja executada com sucesso</response>
-    [HttpGet("/api/books")]
-    [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IEnumerable<Book>> JsonForBooksAsync()
+    public static async Task<IEnumerable<Book>> JsonForBooks()
     {
         using (HttpClient client = new HttpClient())
         {
             try
             {
                 getJsonFile = await client.GetStringAsync(urlJsonFile);
-                books = JsonSerializer.Deserialize<IEnumerable<Book>>(getJsonFile)!;
-                return books;
+
+                if (getJsonFile != null)
+                    books = JsonSerializer.Deserialize<IEnumerable<Book>>(getJsonFile)!;
+                else
+                    throw new Exception("Arquivo json não encontrado");
+
+                if (books != null)
+                    return books;
+                else
+                    throw new Exception("Erro ao retornar a lista de livros");
             }
-            catch (JsonException ex)
+            catch (Exception ex)
             {
-                throw new JsonException($"Ops, aconteceu algo: {ex.Message}");
+                throw new Exception($"Aconteceu algo errado: {ex.Message}");
             }
         }
+    }
+
+    /// <summary>
+    /// - Retorna uma lista de todos os livros
+    /// </summary>
+    /// <returns>Json</returns>
+    /// <response code="200">Caso a consulta seja executada com sucesso</response>
+    [HttpGet("/api/books")]
+    public IEnumerable<Book> GetBooks()
+    {
+        return JsonForBooks().Result.ToList();
     }
 
     /// <summary>
@@ -48,21 +65,9 @@ public class BookController : ControllerBase
     /// <response code="200">Caso a consulta seja executada com sucesso</response>
     [HttpGet("/api/books/price/asc")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IEnumerable<Book>> GetBooksOrderByPriceAsc()
+    public IEnumerable<Book> GetBooksOrderByPriceAsc()
     {
-        using (HttpClient client = new HttpClient())
-        {
-            try
-            {
-                var getJsonFile = await new HttpClient().GetStringAsync(urlJsonFile);
-                books = JsonSerializer.Deserialize<IEnumerable<Book>>(getJsonFile)!;
-                return books.OrderBy(b => b.Preco).ToList();
-            }
-            catch (JsonException ex)
-            {
-                throw new JsonException($"Ops, aconteceu algo: {ex.Message}");
-            }
-        }
+        return JsonForBooks().Result.OrderBy(b => b.Preco).ToList();
     }
 
     /// <summary>
@@ -72,21 +77,9 @@ public class BookController : ControllerBase
     /// <response code="200">Caso a consulta seja executada com sucesso</response>
     [HttpGet("/api/books/price/desc")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IEnumerable<Book>> GetBooksOrderByPriceDesc()
+    public IEnumerable<Book> GetBooksOrderByPriceDesc()
     {
-        using (HttpClient client = new HttpClient())
-        {
-            try
-            {
-                var getJsonFile = await new HttpClient().GetStringAsync(urlJsonFile);
-                books = JsonSerializer.Deserialize<IEnumerable<Book>>(getJsonFile)!;
-                return books.OrderByDescending(b => b.Preco).ToList();
-            }
-            catch (JsonException ex)
-            {
-                throw new JsonException($"Ops, aconteceu algo: {ex.Message}");
-            }
-        }
+        return JsonForBooks().Result.OrderByDescending(b => b.Preco).ToList();
     }
 
     /// <summary>
@@ -97,21 +90,9 @@ public class BookController : ControllerBase
     /// <response code="200">Caso a consulta seja executada com sucesso</response>
     [HttpGet("/api/books/author")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IEnumerable<Book>> GetBooksByAuthorName(string author)
+    public IEnumerable<Book> GetBooksByAuthorName(string author)
     {
-        using (HttpClient client = new HttpClient())
-        {
-            try
-            {
-                var getJsonFile = await new HttpClient().GetStringAsync(urlJsonFile);
-                books = JsonSerializer.Deserialize<IEnumerable<Book>>(getJsonFile)!;
-                return books.Where(b => b.Especificacoes!.Autor!.Contains(author, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
-            catch (JsonException ex)
-            {
-                throw new JsonException($"Ops, aconteceu algo: {ex.Message}");
-            }
-        }
+        return JsonForBooks().Result.Where(b => b.Especificacoes!.Autor!.Contains(author, StringComparison.OrdinalIgnoreCase)).ToList();
     }
 
     /// <summary>
@@ -122,21 +103,9 @@ public class BookController : ControllerBase
     /// <response code="200">Caso a consulta seja executada com sucesso</response>
     [HttpGet("/api/books/name")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IEnumerable<Book>> GetBooksByBookName(string name)
+    public IEnumerable<Book> GetBooksByBookName(string name)
     {
-        using (HttpClient client = new HttpClient())
-        {
-            try
-            {
-                var getJsonFile = await new HttpClient().GetStringAsync(urlJsonFile);
-                books = JsonSerializer.Deserialize<IEnumerable<Book>>(getJsonFile)!;
-                return books.Where(b => b.Nome!.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
-            catch (JsonException ex)
-            {
-                throw new JsonException($"Ops, aconteceu algo: {ex.Message}");
-            }
-        }
+        return JsonForBooks().Result.Where(b => b.Nome!.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
     }
 
     /// <summary>
@@ -147,20 +116,8 @@ public class BookController : ControllerBase
     /// <response code="200">Caso a consulta seja executada com sucesso</response>
     [HttpGet("/api/books/genre")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<IEnumerable<Book>> GetBooksByGenre(string genre)
+    public IEnumerable<Book> GetBooksByGenre(string genre)
     {
-        using (HttpClient client = new HttpClient())
-        {
-            try
-            {
-                var getJsonFile = await new HttpClient().GetStringAsync(urlJsonFile);
-                books = JsonSerializer.Deserialize<IEnumerable<Book>>(getJsonFile)!;
-                return books.Where(b => b.Especificacoes!.Genres!.ToString()!.Contains(genre, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
-            catch (JsonException ex)
-            {
-                throw new JsonException($"Ops, aconteceu algo: {ex.Message}");
-            }
-        }
+        return JsonForBooks().Result.Where(b => b.Especificacoes!.Genres!.ToString()!.Contains(genre, StringComparison.OrdinalIgnoreCase)).ToList();
     }
 }
