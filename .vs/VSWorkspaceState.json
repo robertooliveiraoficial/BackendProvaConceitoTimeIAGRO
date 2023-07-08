@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Projeto API - Book Manager",
+    "\\Projeto API - Book Manager\\BooksManager",
+    "\\Projeto API - Book Manager\\BooksManager\\Controllers",
+    "\\Projeto API - Book Manager\\BooksManager\\Models",
+    "\\Projeto API - Book Manager\\BooksManager\\Properties"
   ],
-  "SelectedNode": "\\C:\\Users\\rober\\Source\\Repos\\BackendProvaConceitoTimeIAGRO",
+  "SelectedNode": "\\Projeto API - Book Manager\\BooksManager\\Controllers\\BookController.cs",
   "PreviewInSolutionExplorer": false
 }
