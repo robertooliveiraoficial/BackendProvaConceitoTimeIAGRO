@@ -17,7 +17,7 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books;
-- Na aba "Params", na coluna "Key", insira o parâmetro, nesse caso, "api_key"(sem aspas), na coluna "Value", insira o valor : "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas);
+- Na aba "Authorization", na opção "Type", escolha "API Key". Na opção "Key", insira o parâmetro "api_key"(sem aspas), na coluna "Value", insira o valor "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS EM ORDEM CRESCENTE(ASC)
@@ -25,7 +25,7 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/price/asc;
-- Na aba "Params", na coluna "Key", insira o parâmetro, nesse caso, "api_key"(sem aspas), na coluna "Value", insira o valor : "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas);
+- Na aba "Authorization", na opção "Type", escolha "API Key". Na opção "Key", insira o parâmetro "api_key"(sem aspas), na coluna "Value", insira o valor "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS EM ORDEM DECRESCENTE(DESC)
@@ -33,7 +33,7 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/price/desc;
-- Na coluna "Params" será necessário passar a "Key": api_key com o "Value": BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg==
+- Na aba "Authorization", na opção "Type", escolha "API Key". Na opção "Key", insira o parâmetro "api_key"(sem aspas), na coluna "Value", insira o valor "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS PELO NOME DO AUTOR
@@ -41,7 +41,7 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/author;
-- Na aba "Params", na coluna "Key", insira o parâmetro, nesse caso, "api_key"(sem aspas), na coluna "Value", insira o valor : "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
+- Na aba "Authorization", na opção "Type", escolha "API Key". Na opção "Key", insira o parâmetro "api_key"(sem aspas), na coluna "Value", insira o valor "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
 - Na aba "Params", na coluna "Key", logo abaixo, insira o nome de outro parâmetro, nesse caso "author"(sem aspas), na coluna "Value", insira o nome do autor(Ex.: Rowling).
 - Clique em SEND;
 
@@ -50,7 +50,7 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/name;
-- Na aba "Params", na coluna "Key", insira o parâmetro, nesse caso, "api_key"(sem aspas), na coluna "Value", insira o valor : "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
+- Na aba "Authorization", na opção "Type", escolha "API Key". Na opção "Key", insira o parâmetro "api_key"(sem aspas), na coluna "Value", insira o valor "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
 - Na aba "Params", na coluna "Key", logo abaixo, insira o nome de outro parâmetro, nesse caso "name"(sem aspas), na coluna "Value", insira o nome do livro(Ex.: Harry).
 - Clique em SEND;
 
@@ -59,7 +59,7 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/genre;
-- Na aba "Params", na coluna "Key", insira o parâmetro, nesse caso, "api_key"(sem aspas), na coluna "Value", insira o valor : "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
+- Na aba "Authorization", na opção "Type", escolha "API Key". Na opção "Key", insira o parâmetro "api_key"(sem aspas), na coluna "Value", insira o valor "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
 - Na aba "Params", na coluna "Key", logo abaixo, insira o nome de outro parâmetro, nesse caso "genre"(sem aspas), na coluna "Value", insira a descrição do gênero(Ex.: Adventure).
 - Clique em SEND;
 
