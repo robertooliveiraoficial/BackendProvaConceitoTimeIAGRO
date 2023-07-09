@@ -17,6 +17,7 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books;
+- Na aba "Params", na coluna "Key", insira o parâmetro, nesse caso, "api_key"(sem aspas), na coluna "Value", insira o valor : "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas);
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS EM ORDEM CRESCENTE(ASC)
@@ -24,6 +25,7 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/price/asc;
+- Na aba "Params", na coluna "Key", insira o parâmetro, nesse caso, "api_key"(sem aspas), na coluna "Value", insira o valor : "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas);
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS EM ORDEM DECRESCENTE(DESC)
@@ -31,6 +33,7 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/price/desc;
+- Na coluna "Params" será necessário passar a "Key": api_key com o "Value": BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg==
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS PELO NOME DO AUTOR
@@ -38,7 +41,8 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/author;
-- Na aba "Params", na coluna "Key", insira o nome do parâmetro, nesse caso "author"(sem aspas), na coluna "Value", insira o nome do autor(Ex.: Rowling).
+- Na aba "Params", na coluna "Key", insira o parâmetro, nesse caso, "api_key"(sem aspas), na coluna "Value", insira o valor : "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
+- Na aba "Params", na coluna "Key", logo abaixo, insira o nome de outro parâmetro, nesse caso "author"(sem aspas), na coluna "Value", insira o nome do autor(Ex.: Rowling).
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS PELO NOME DO LIVRO
@@ -46,7 +50,8 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/name;
-- Na aba "Params", na coluna "Key", insira o nome do parâmetro, nesse caso "name"(sem aspas), na coluna "Value", insira o nome do livro(Ex.: Harry).
+- Na aba "Params", na coluna "Key", insira o parâmetro, nesse caso, "api_key"(sem aspas), na coluna "Value", insira o valor : "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
+- Na aba "Params", na coluna "Key", logo abaixo, insira o nome de outro parâmetro, nesse caso "name"(sem aspas), na coluna "Value", insira o nome do livro(Ex.: Harry).
 - Clique em SEND;
 
 -- TRAZER TODOS OS LIVROS PELO GÊNERO
@@ -54,84 +59,9 @@
 - Crie uma nova aba de request do tipo HTTP;
 - Selecione método GET;
 - Insira essa url: <applicationUrl>/api/books/genre;
-- Na aba "Params", na coluna "Key", insira o nome do parâmetro, nesse caso "genre"(sem aspas), na coluna "Value", insira a descrição do gênero(Ex.: Adventure).
+- Na aba "Params", na coluna "Key", insira o parâmetro, nesse caso, "api_key"(sem aspas), na coluna "Value", insira o valor : "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg=="(sem aspas)
+- Na aba "Params", na coluna "Key", logo abaixo, insira o nome de outro parâmetro, nesse caso "genre"(sem aspas), na coluna "Value", insira a descrição do gênero(Ex.: Adventure).
 - Clique em SEND;
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-/* --- TESTES SWAGGER ---*/
--------------------------------------------------------------------------------------------------------------------------------------------------------------------
-- Compile a aplicação;
-- Inicie sem depurar, feito isso irá ser apresentado a tela do SWAGGER na seguinte url: <applicationUrl>/swagger/index.html;
-- Nessa tela irá ser apresentado o nome do projeto, nesse caso, BOOKS MANAGER, e os respectivos métodos.
-
--- TRAZER TODOS OS LIVROS
--------------------------
-Clique em: 
-- GET ​/api/books;
-- Try it out(Para habilitar as opções);
-- EXECUTE;
-
--- TRAZER TODOS OS LIVROS EM ORDEM CRESCENTE(ASC)
--------------------------------------------------
-Clique em: 
-GET /api/books/price/asc;
-- Try it out(Para habilitar as opções);
-- EXECUTE;
-
--- TRAZER TODOS OS LIVROS EM ORDEM DECRESCENTE(DESC)
-----------------------------------------------------
-Clique em: 
-GET /api/books/price/desc;
-- Try it out(Para habilitar as opções);
-- EXECUTE;
-
--- TRAZER TODOS OS LIVROS PELO NOME DO AUTOR
---------------------------------------------
-Clique em: 
-GET ​/api/books/author;
-- Try it out(Para habilitar as opções);
-- Habilitando irá liberar uma aba(Params):
-  - Será apresentado duas colunas:
-    - "Name":
-      -------
-       - apresenta o nome e o tipo do parâmetro;
-    - "Description":
-      --------------
-       - onde será passado o valor do parâmetro;          
-- Após inserir o parâmetro, clique em: EXECUTE;
-- Logo abaixo em RESPONSES será apresentado o retorno da consulta;
-
--- TRAZER TODOS OS LIVROS PELO NOME DO LIVRO
---------------------------------------------
-Clique em: 
-GET ​/api/books/name;
-- Try it out(Para habilitar as opções);
-- Habilitando irá liberar uma aba(Params):
-  - Será apresentado duas colunas:
-    - "Name":
-      -------
-       - apresenta o nome e o tipo do parâmetro;
-    - "Description":
-      --------------
-       - onde será passado o valor do parâmetro;          
-- Após inserir o parâmetro, clique em: EXECUTE;
-- Logo abaixo em RESPONSES será apresentado o retorno da consulta;
-
--- TRAZER TODOS OS LIVROS PELO GÊNERO
--------------------------------------
-Clique em: 
-GET /api/books/genre;
-- Try it out(Para habilitar as opções);
-- Habilitando irá liberar uma aba(Params):
-  - Será apresentado duas colunas:
-    - "Name":
-      -------
-       - apresenta o nome e o tipo do parâmetro;
-    - "Description":
-      --------------
-       - onde será passado o valor do parâmetro;          
-- Após inserir o parâmetro, clique em: EXECUTE;
-- Logo abaixo em RESPONSES será apresentado o retorno da consulta;
 
 
 
