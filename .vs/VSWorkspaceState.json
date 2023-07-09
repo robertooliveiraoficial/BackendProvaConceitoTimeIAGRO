@@ -3,9 +3,8 @@
     "",
     "\\Projeto API - Book Manager",
     "\\Projeto API - Book Manager\\BooksManager",
-    "\\Projeto API - Book Manager\\BooksManager\\Controllers",
-    "\\Projeto API - Book Manager\\BooksManager\\Models",
-    "\\Projeto API - Book Manager\\BooksManager\\Properties"
+    "\\Projeto API - Book Manager\\BooksManager\\Attributes",
+    "\\Projeto API - Book Manager\\BooksManager\\Controllers"
   ],
   "SelectedNode": "\\Projeto API - Book Manager\\BooksManager\\Controllers\\BookController.cs",
   "PreviewInSolutionExplorer": false

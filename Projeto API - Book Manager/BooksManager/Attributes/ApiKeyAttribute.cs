@@ -8,10 +8,7 @@ namespace BooksManager.Attributes
     /// </summary>
     [AttributeUsage(validOn: AttributeTargets.Class | AttributeTargets.Method)]
     public class ApiKeyAttribute : Attribute, IAsyncActionFilter
-    {
-        private const string ApiKeyName = "api_key";
-        private const string ApiKey = "BackendProvaConceitoTimeIAGRO_IlTevUM/z0ey3NwCV/unWg==";
-
+    {        
         /// <summary>
         /// 
         /// </summary>
@@ -22,7 +19,12 @@ namespace BooksManager.Attributes
             ActionExecutingContext context,
             ActionExecutionDelegate next)
         {
-            if (!context.HttpContext.Request.Query.TryGetValue(ApiKeyName, out var extractedApiKey))
+            var _config = new ConfigurationBuilder().AddJsonFile("appsettings.json").Build();
+            var apiKeyName = _config.GetValue<string>("ApiConfiguration:ApiKeyName");
+            var apiKey = _config.GetValue<string>("ApiConfiguration:ApiKey");
+
+
+            if (!context.HttpContext.Request.Query.TryGetValue(apiKeyName, out var extractedApiKey))
             {
                 context.Result = new ContentResult()
                 {
@@ -33,7 +35,7 @@ namespace BooksManager.Attributes
             }
 
 
-            if (!ApiKey.Equals(extractedApiKey))
+            if (!apiKey.Equals(extractedApiKey))
             {
                 context.Result = new ContentResult()
                 {
