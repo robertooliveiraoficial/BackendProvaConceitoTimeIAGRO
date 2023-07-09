@@ -10,7 +10,7 @@
 /* --- TESTES POSTMAN ---*/
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-** applicationUrl = ENDEREÇO LOCAL E A PORTA QUE A APLICAÇÃO IRÁ USAR: "https://localhost:<PORTA>"(ENCONTRA-SE NA PASTA PROPERTIES, NO ARQUIVO launchSettings.json);
+** applicationUrl = ENDEREÇO LOCAL E A PORTA QUE A APLICAÇÃO IRÁ USAR: "https://localhost:PORTA" (ENCONTRA-SE NA PASTA PROPERTIES, NO ARQUIVO launchSettings.json);
 
 -- TRAZER TODOS OS LIVROS
 -------------------------
